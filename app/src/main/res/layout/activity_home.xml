@@ -13,7 +13,7 @@
         android:id="@+id/viewPager"
         android:scaleType="centerCrop"
         android:layout_centerHorizontal="true"
-        />
+    />
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,4 +79,15 @@
                 android:textSize="20sp" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonLogout"
+        style="@style/viewCustom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+    />
+
 </RelativeLayout>
