@@ -35,6 +35,8 @@ class HomeActivity : AppCompatActivity() {
     private var tvEmail: TextView? = null
     private var tvEmailVerifiied: TextView? = null
 
+    private var btnLogout: Button? = null
+
     internal lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +60,9 @@ class HomeActivity : AppCompatActivity() {
         tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
         tvEmail = findViewById<View>(R.id.tv_email) as TextView
         tvEmailVerifiied = findViewById<View>(R.id.tv_email_verifiied) as TextView
+
+        btnLogout = findViewById<View>(R.id.buttonLogout) as Button
+        btnLogout!!.setOnClickListener { logout() }
     }
 
     override fun onStart() {
@@ -73,5 +78,11 @@ class HomeActivity : AppCompatActivity() {
             }
             override fun onCancelled(databaseError: DatabaseError) {}
         })
+    }
+
+    private fun logout() {
+        val intent = Intent(this@HomeActivity, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
     }
 }
